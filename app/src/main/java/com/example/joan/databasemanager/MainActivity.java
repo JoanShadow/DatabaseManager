@@ -1,18 +1,23 @@
 package com.example.joan.databasemanager;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private FileUtils fileUtils = null;
-    
+    private EditText editText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initLayout();
+        fileUtils = new FileUtils();
     }
 
     private void initLayout() {
@@ -29,19 +34,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnOk.setOnClickListener(this);
 
         // EditText
+        editText = findViewById(R.id.editText);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.saveIntern:
-                // TODO guardar en memoria interna
+                if (fileUtils != null) {
+                    String text = editText.getText().toString();
+                    fileUtils.saveInternalMemory(this, text);
+                }
                 break;
             case R.id.saveExtern:
-                // TODO guardar en memoria externa
+                if (fileUtils != null) {
+                    String text = editText.getText().toString();
+                    fileUtils.saveExternalMemory(text);
+                }
                 break;
             case R.id.createDatabase:
-                // TODO crear base de datos
+                MyDatabase myDatabase = new MyDatabase(this);
+                SQLiteDatabase sqLiteDatabase = myDatabase.getReadableDatabase();
                 break;
             case R.id.btnOk:
                 // TODO boton de enviar
