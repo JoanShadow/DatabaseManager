@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DatabaseManager</string>
+    <string name="save_intern_memory">SAVE INTERN MEMORY</string>
+    <string name="save_extern_memory">SAVE EXTERN MEMORY</string>
+    <string name="create_database">CREATE DATABASE</string>
+    <string name="btnOk">OK</string>
+    <string name="placeholder_hint">Escribe el texto aquí..</string>
+</resources>
