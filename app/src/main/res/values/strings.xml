@@ -5,4 +5,5 @@
     <string name="create_database">CREATE DATABASE</string>
     <string name="btnOk">OK</string>
     <string name="placeholder_hint">Escribe el texto aquí..</string>
+    <string name="query_database">QUERY DATABASE</string>
 </resources>

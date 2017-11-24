@@ -27,6 +27,13 @@
         android:text="@string/create_database"
         android:textColor="@color/yellow" />
 
+    <Button
+        android:id="@+id/queryDatabase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/createDatabase"
+        android:text="@string/query_database"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,7 +43,6 @@
             android:id="@+id/editText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_weight="3"
             android:hint="@string/placeholder_hint" />
 
